@@ -3,7 +3,6 @@ import requests
 base_url = "https://pokeapi.co/api/v2/"
 
 def get_pokemon_info(pokemon_name):
-    pokemon_name = input("Enter Pokémon name: ")
     url = f"{base_url}/pokemon/{pokemon_name}"
     response = requests.get(url)
 
@@ -13,7 +12,7 @@ def get_pokemon_info(pokemon_name):
     else:
         print(f"Failed to retrieve data {response.status_code}")
 
-#pokemon_name = "Riolu"
+pokemon_name = input("Enter a Pokémon name: ")
 pokemon_info = get_pokemon_info(pokemon_name)
 
 if pokemon_info:
